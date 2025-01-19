@@ -15,7 +15,7 @@ public class BookService {
     private BookRepository bookRepository;
 
     public Book addBook(Book book) {
-        if (book.getTitle() == null || book.getAuthor() == null || book.getGenre() == null) {
+        if (book.getGenre() == null) {
             throw new IllegalArgumentException("Invalid book data");
         }
         return bookRepository.save(book);
